@@ -1,8 +1,7 @@
 let sendEvent = (sender) => {
     document.getElementById("result-text").innerHTML += sender.textContent;
-    console.log(sender);
+    console.log(sender.innerHTML);
 }
-
 
 let evaluateResult = () => {    
     let result = eval(document.getElementById("result-text").innerHTML);
@@ -15,6 +14,7 @@ let backspace = () => {
     resultString = resultString.slice(0,-1);
     document.getElementById("result-text").innerHTML = resultString;
 }
-// document.getElementsById("result-text").addEventListener("click", function() {
-//     document.getElementsById("logo-heading").innerHTML = "123123"
-// });
+
+let clearTextbox = () => {
+    document.getElementById("result-text").innerHTML = "";
+}
