@@ -1,0 +1,23 @@
+{
+  "name": "project-calculator-web",
+  "version": "1.0.0",
+  "description": "making calculator web app",
+  "main": "index.js",
+  "scripts": {
+    "test": "start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/krowter/project-calculator-web.git"
+  },
+  "keywords": [
+    "calculator",
+    "web"
+  ],
+  "author": "Krishna Rowter",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/krowter/project-calculator-web/issues"
+  },
+  "homepage": "https://github.com/krowter/project-calculator-web#readme"
+}
