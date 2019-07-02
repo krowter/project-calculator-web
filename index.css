@@ -49,25 +49,33 @@ img {
 #buttons {
     margin-top: 20px;
     text-align: center;
+    font-family: 'Source Code Pro', monospace;
+    font-size: 24px;
 }
 
-.button {
-    font-family: 'Source Code Pro', monospace;
+button {
+    font-family: inherit;
+    font-size: inherit;
     padding: 0px 30px;
-    margin: 5px;
+    margin: 8px;
     background-color: white;
-    font-size: 15px;
     border-radius: 20px;
     background: linear-gradient(0deg, rgba(244,240,203,1) 0%, rgba(255,255,255,1) 59%, rgba(255,255,255,1) 100%); 
     box-shadow: 1px 1px 1px grey;
+    padding: 20px 35px;
 }
 
-.button:hover {
+button:hover {
     background: linear-gradient(0deg, rgba(199,196,165,1) 0%, rgba(255,255,255,1) 64%, rgba(255,255,255,1) 100%);
     box-shadow: 1px 1px 0px;
+    cursor: pointer;
 }
 
-.button:active {
+button:active {
     background: linear-gradient(0deg, rgb(135, 132, 103) 0%, rgba(255,255,255,1) 64%, rgba(255,255,255,1) 100%);
     box-shadow: 1px 1px 0px;
+}
+
+button:disabled {
+    background: linear-gradient(0deg, rgb(152, 148, 112) 0%, rgb(162, 162, 162) 64%, rgb(182, 182, 182) 100%);
 }
