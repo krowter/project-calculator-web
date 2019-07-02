@@ -12,6 +12,7 @@ let checkStringLength = () => {
     for(let i=0;i<allButton.length;i++) {
         allButton[i].disabled=flag;
     }
+
     document.getElementById("backspace").disabled=false;
 }
 
@@ -22,25 +23,31 @@ let updatePeriodButton = () => {
 }
 
 //isi kotak teks dengan teks si button
-//intinya itu
+//intinya itu, haha
 let sendEvent = (sender) => {
     checkStringLength();
+
     document.getElementById("result-text").innerHTML += sender.textContent;
+    
     if(sender.textContent==".") counterForPeriod++;
     console.log(sender.innerHTML);
     enableOperators();
+    
     if(sender.className=="operand") {
         counterForOperators=0;
     }
+    
     if(sender.className=="operator") {
         counterForOperators++;
         sender.disabled=true;
     }
+    
     if(sender.className=="operator" && counterForOperators>1) {
         backspace();
         backspace();
         document.getElementById("result-text").innerHTML += sender.textContent;
     }
+    
     updatePeriodButton();
 }
 
@@ -48,14 +55,18 @@ let sendEvent = (sender) => {
 //pake fungsi eval() untuk evaluate isi dari kotak teks
 let evaluateResult = () => {    
     let result = eval(document.getElementById("result-text").innerHTML);
+    
     if(String(result).length > 5) {result = result.toFixed(5)};
+    
     document.getElementById("result-text").innerHTML = result;
 }
 
 //ini pas tombol backspace
 let backspace = () => {
     checkStringLength();
+    
     let resultString = String(document.getElementById("result-text").innerHTML);
+    
     if(resultString.charAt(resultString.length-1).toString()=="*") enableOperators();
     resultString = resultString.slice(0,-1);
     document.getElementById("result-text").innerHTML = resultString;
@@ -64,7 +75,9 @@ let backspace = () => {
 //ini pas tombol clear
 let clearTextbox = () => {
     document.getElementById("result-text").innerHTML = "";
+    
     enableOperators();
+    
     enablePeriod();
 }
 
@@ -77,6 +90,7 @@ let enablePeriod = () => {
 //enable tombol operators berdasarkan flag yang tadi.
 let enableOperators = () => {
     operators = document.getElementsByClassName("operator");
+    
     for(let i=0;i<operators.length;i++) {
         operators[i].disabled=false;
     }
