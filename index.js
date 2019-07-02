@@ -54,6 +54,7 @@ let backspace = () => {
 let clearTextbox = () => {
     document.getElementById("result-text").innerHTML = "";
     enableOperators();
+    enablePeriod();
 }
 
 let operator = document.getElementsByClassName("operator");
